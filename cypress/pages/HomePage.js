@@ -4,6 +4,7 @@ class HomePage {
         productsGrid: () => cy.get('.products-grid')
     }
 
+    
     visit() {
         cy.visit('/');
     }
