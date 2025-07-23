@@ -10,7 +10,10 @@ class ProductPage {
     backToProductsButton: () => cy.get('[data-testid="back-to-products"]'),
     productDetailImage: () => cy.get('.product-detail-image'),
     productName: () => cy.get('[data-testid="product-name"]'),
-    productDescription: () => cy.get('[data-testid="product-description"]')
+    productDescription: () => cy.get('[data-testid="product-description"]'),
+    quantityCount: () => cy.get('[data-testid="quantity-3"]'),
+subTotal: () => cy.get('[data-testid="subtotal"]')
+
   }
 }
 

@@ -12,6 +12,7 @@ This document outlines the bugs and improvement suggestions identified during th
 3. Click the "Sort by Price" button once — expected: products should be sorted in ascending order by price.
 4. Click the "Sort by Price" button again — expected: products should be sorted in descending order by price.
 5. **Actual Result:** Product does not sorted properly.
+6. **Expected Result** Sorting must be working properly (ascending and descending order both)
 
 
 ### Bug 2: Cancel Button Saves Data on Profile Page
@@ -23,6 +24,23 @@ This document outlines the bugs and improvement suggestions identified during th
 4. Click on the "Cancel" button.
 5. **Expected Result:** Modified data should be discarded, and previous data should remain.
 6. **Actual Result:** Modified data is saved even after canceling.
+
+### Bug 3: Cart Quantity Resets to 0 on Second Add to Cart
+
+**Steps to Reproduce:**
+1. Visit the Home Page.
+2. Click the **View Details** button on any product to navigate to the Product Page.
+3. On the Product Page, set the **Quantity** to `3`.
+4. Click the **Add to Cart** button.
+5. Verify on the **Cart Page** that the quantity is correctly shown as `3`.
+6. Click on the browser back button to return to the Product Page.
+7. Update the **Quantity** to `2`.
+8. Click the **Add to Cart** button again.
+
+**Expected Result:**  
+The cart should update the product quantity to `2`.
+**Actual Result:**  
+The quantity is unexpectedly reset to `0` instead of being updated.
 
 ---
 
@@ -180,3 +198,21 @@ This document outlines the bugs and improvement suggestions identified during th
 3. Enter fewer than 3 characters (e.g., "a", "ab").
 4. **Observation:** Search is triggered with each character entered, even with less than 3 characters.
 5. **Improvement Suggestion:** Optimize search functionality by triggering the filter/search only after the user has entered at least 3 characters. This will improve performance, especially when product count is high.
+
+### Improvement 17: Search Field and Add to Cart Button Should Be Smaller
+
+**Steps to Reproduce:**
+1. Go to the Home Page.
+2. Observe the current size of the search input field.
+3. Click on the "View Details" button for any product to open the Product Page.
+4. Observe the current size of the "Add to Cart" button.
+5. **Observation:** Both the search field and the "Add to Cart" button are larger than necessary and visually dominant, which can affect the overall balance of the UI.
+6. **Improvement Suggestion:** Reduce the size and padding of both elements to align better with the design proportions of the page. This will enhance visual hierarchy and ensure these elements don’t overpower other important components on the screen.
+
+### Improvement 18: Website Should Be Mobile Responsive
+
+**Steps to Reproduce:**
+1. Open the website on any mobile device or use browser developer tools to simulate a mobile viewport (e.g., iPhone SE, Galaxy S10).
+2. Navigate through the Home Page, Product Page, Cart, Address, Payment, and Profile pages.
+3. **Observation:** Layout breaks, content overflows, buttons and inputs are misaligned, and overall usability is poor on smaller screens.
+4. **Improvement Suggestion:** Implement responsive design principles using media queries, flexible grids, and scalable elements. Ensure the site adapts to various screen sizes for better usability, accessibility, and mobile user experience.
